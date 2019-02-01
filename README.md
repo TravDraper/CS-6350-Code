@@ -1,2 +1,2 @@
 # CS-6350-Code
-Solutions and code snippets from my work in CS 6350 Spring at the University of Utah
+This is a Machine Learning repository created by Travis Draper for my work in CS 6350 at the University of Utah

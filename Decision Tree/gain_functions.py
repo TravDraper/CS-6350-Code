@@ -129,11 +129,19 @@ def gainE(data, attr, target_attr):
         data_subset = [record for record in data if record[attr] == val]
         
         subset_error += val_prob * majorityError(data_subset, target_attr)
-        #print("Probability:", val_prob, "ME:",  majorityError(data_subset, target_attr))    
+        
     #subtract ME of chosen attribute from ME of whole set wrt target attribute
-    #print(majorityError(data, target_attr))
-    return(majorityError(data, target_attr) - subset_error)
     
+    #Here I check for attribute purity, and refuse to split
+    # when it's already been split on
+    if majorityError(data, attr) == 0:
+        return majorityError(data, target_attr) - subset_error
+    #This is a modified version of majority error that gives out a value for gain
+    # when there would be some gain under other metrics
+    elif majorityError(data, target_attr) - subset_error == 0:
+        return math.sqrt(majorityError(data, target_attr)) -subset_error
+    else: #This is the normal value you would get.
+        return majorityError(data, target_attr) - subset_error
     
 def best_split(data, labels, target, method):
     gains = []

@@ -8,3 +8,9 @@ To use the linear regression models provide a .CSV file with the output variable
 
 
 To use the perceptron models, provide a .csv file with the last column as the output variable, the outputs should be either 1,0 or 1,-1.  The different types of perceptrons can all adapt to the same type of .csv file.  You are more likely to get good accuracy out of the more complicated multi-perceptron methods.
+
+Use of the SVM models is much the same as the perceptron, it takes in the same type of data, and outputs results in the same format.  
+
+Logistic regression is once again the same style as the other machine learning methods in its execution and outputs.  Make sure to format your inputs in the right way.  Although the functions included in the library should work do do it on their own.
+
+The neural networks section uses Tensorflow, more specifically the keras library to build and run a model.  I would recommend using the tutorials for those libraries included on their sites.
